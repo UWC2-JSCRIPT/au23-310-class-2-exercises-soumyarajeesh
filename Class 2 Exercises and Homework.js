@@ -5,22 +5,39 @@
 // - 'favorite food'
 // - bestFriend (object with the same 3 properties as above)
 
-
+const me = {
+firstName : 'Soumya',
+lastName : 'Rajeesh',
+favoriteFood : 'Pasta',
+bestFriend : {
+  bestFriendFirstName: 'Surya',
+  bestFriendLastName : 'Nair',
+  bestFriendFavoriteFood:'Pizza',
+}
+}
 // 2. console.log best friend's firstName and your favorite food
-
+console.log(me['bestFriend']['bestFriendFirstName']);
+console.log(me['favoriteFood']);
 
 // 3. Create an array to represent this tic-tac-toe board
 // -O-
 // -XO
 // X-X
-
+const ticTacToe = [
+  ['-','o','-'],
+  ['-','x','o'],
+  ['x','-','x'],
+];
 
 // 4. After the array is created, 'O' claims the top right square.
 // Update that value.
-
+ticTacToe[0][2]= 'o'
 
 // 5. Log the grid to the console.
 
+console.log(ticTacToe[0]);
+console.log(ticTacToe[1]);
+console.log(ticTacToe[2]);
 
 // 6. You are given an email as string myEmail, make sure it is in correct email format.
 // Should be 1 or more characters, then @ sign, then 1 or more characters, then dot, then one or more characters - no whitespace
