@@ -47,8 +47,9 @@ console.log(ticTacToe[2]);
 // - Use regexp test method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
 
 
-const regex_pattern=/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})$/
+const regex_pattern=(/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})$/);
 function validateEmail(email_id){
+
   if(regex_pattern.test(email_id)){
     console.log('The email address is valid');
   }
@@ -63,16 +64,22 @@ validateEmail('youtube@com');
 // 7. You are given an assignmentDate as a string in the format "month/day/year"
 // i.e. '1/21/2019' - but this could be any date.
 // Convert this string to a Date
-const assignmentDate = '1/21/2019';
 
+const assignmentDate = '1/21/2019'; //Jan 21 2019
+let output= new Date(assignmentDate);
+console.log(output.toString()); // Mon Jan 21 2019 00:00:00
 
 // 8. Create a new Date instance to represent the dueDate.  
 // This will be exactly 7 days after the assignment date.
 
+var date =new Date("1/21/2019"); // Assignment date: 1/21/2019
+date.setDate(date.getDate()+7);
+console.log(date); // New due date = current date + 7
 
 // 9. Use dueDate values to create an HTML time tag in format
 // <time datetime="YYYY-MM-DD">Month day, year</time>
 // I have provided a months array to help
+
 const months = [
   'January',
   'February',
@@ -87,6 +94,10 @@ const months = [
   'November',
   'December'
 ];
-
+let specificFormat = date.getFullYear() +'-' +  (date.getMonth()+1) + '-' + date.getDate();
 
 // 10. log this value using console.log
+// console.log(specificFormat);
+
+console.log(`'<time datetime="${specificFormat}">${months[0]} 28, 2019</time>'`);
+
