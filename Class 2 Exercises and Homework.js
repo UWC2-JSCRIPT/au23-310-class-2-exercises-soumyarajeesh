@@ -47,6 +47,19 @@ console.log(ticTacToe[2]);
 // - Use regexp test method https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/RegExp/test
 
 
+const regex_pattern=/^([a-z\d\.-]+)@([a-z\d-]+)\.([a-z]{2,8})$/
+function validateEmail(email_id){
+  if(regex_pattern.test(email_id)){
+    console.log('The email address is valid');
+  }
+  else{
+    console.log('The email address is not valid');
+  }
+}
+
+validateEmail('abc123@gmail.com');
+validateEmail('youtube@com');
+
 // 7. You are given an assignmentDate as a string in the format "month/day/year"
 // i.e. '1/21/2019' - but this could be any date.
 // Convert this string to a Date
